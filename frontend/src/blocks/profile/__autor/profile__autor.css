@@ -1,0 +1,12 @@
+.profile__autor {
+    padding-left: 30px;
+}
+
+@media (max-width: 630px) {
+    .profile__autor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 26px 0 0 0;
+    }
+}

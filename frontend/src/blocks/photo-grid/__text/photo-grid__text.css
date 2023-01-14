@@ -1,0 +1,12 @@
+.photo-grid__text {
+    margin: 25px 15px 22px 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+@media (max-width: 600px) {
+    .photo-grid__text {
+        margin: 20px 15px 22px 21px;
+    }
+}

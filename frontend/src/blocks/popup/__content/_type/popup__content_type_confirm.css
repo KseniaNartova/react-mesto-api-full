@@ -1,0 +1,7 @@
+.popup__content_type_confirm {
+    max-width: 430px;
+    max-height: 330px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

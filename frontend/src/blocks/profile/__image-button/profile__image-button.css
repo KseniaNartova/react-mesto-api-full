@@ -1,0 +1,18 @@
+.profile__image-button {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.5s;
+  }
+  
+  .profile__image-button:hover {
+    background-image: url(../../../images/avatarPen.svg);
+    background-color: rgba(0, 0, 0, .8);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }

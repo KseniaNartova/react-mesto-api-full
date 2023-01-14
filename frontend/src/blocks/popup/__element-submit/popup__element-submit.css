@@ -1,0 +1,16 @@
+.popup__element-submit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0;
+  padding-top: 163px;
+}
+
+.popup__element-submit:last-child {
+  gap: 15px;
+}

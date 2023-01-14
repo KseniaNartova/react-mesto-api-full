@@ -1,0 +1,13 @@
+.popup__link {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__link:hover {
+  opacity: 0.8;
+}
