@@ -38,5 +38,4 @@ node_modules
 .vscode
 
 build
-
 .env
