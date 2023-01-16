@@ -1,4 +1,4 @@
-const BASE_URL = "https://auth.nomoreparties.co";
+const BASE_URL = "https://api.nartovaksu.nomoredomains.rocks";
 
 export function onResponce(res) {
   if (res.ok) {

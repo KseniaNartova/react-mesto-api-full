@@ -105,9 +105,8 @@ class Api {
   };
   
   export const api = new Api({
-    url: "https://mesto.nomoreparties.co/v1/cohort-51/",
+    url: "https://api.nartovaksu.nomoredomains.rocks",
     headers: {
-      authorization: "2828649d-c727-4213-9471-433d3a2fcadf",
       "content-Type": "application/json",
     },
   });
