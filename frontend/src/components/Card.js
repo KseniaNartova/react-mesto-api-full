@@ -11,7 +11,6 @@ export default function Card({card, onCardClick, onTrashClick, onCardLike}) {
   }
   function handleLikeClick() {
     onCardLike(card);
-    console.log(card)
   }
 
   const currentUser = React.useContext(CurrentUserContext);
