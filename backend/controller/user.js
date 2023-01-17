@@ -6,7 +6,7 @@ const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
 const AuthError = require('../errors/AuthError');
 
-const { SECRET_JWT = 'very-secret-key' } = process.env;
+const { SECRET_JWT = 'dev-secret' } = process.env;
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})
