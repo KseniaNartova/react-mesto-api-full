@@ -27,7 +27,7 @@ export default function Main({onEditProfile, onAddPlace, onEditAvatar, handleCar
               <ul className="photo-grid__cards">
                 {cards.map((card) => (
                   <Card key={card._id} card={card} onCardClick={handleCardClick} onTrashClick={handleDeleteCardPopupClick} onCardLike={handleCardLike}/>
-                ))}
+                )).reverse()}
               </ul>
             </section>
         </main>
