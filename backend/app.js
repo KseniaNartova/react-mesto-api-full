@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
@@ -6,11 +7,12 @@ const { handlerError } = require('./middlewares/handlerError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes/index');
 
+const { DB_ADDRESS = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 const { PORT = 3000 } = process.env;
 const app = express();
 app.use(cors());
 
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
+mongoose.connect(DB_ADDRESS, {
   useNewUrlParser: true,
 });
 app.use(express.json());
