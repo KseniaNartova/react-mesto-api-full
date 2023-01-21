@@ -3,7 +3,6 @@ const AuthError = require('../errors/AuthError');
 
 const { SECRET_JWT = 'dev-secret' } = process.env;
 
-// eslint-disable-next-line consistent-return
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
   if (!authorization || !authorization.startsWith('Bearer ')) {
@@ -19,4 +18,5 @@ module.exports = (req, res, next) => {
   req.user = payload;
 
   next();
+  return payload;
 };

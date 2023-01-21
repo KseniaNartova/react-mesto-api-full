@@ -4,7 +4,6 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
-const AuthError = require('../errors/AuthError');
 
 const { SECRET_JWT = 'dev-secret' } = process.env;
 
@@ -21,7 +20,7 @@ module.exports.getUserId = (req, res, next) => {
     .then((users) => res.send(users))
     .catch((err) => {
       if (err.name === 'CastError') {
-        next(new BadRequestError('Переданы некорректные данные'));
+        return next(new BadRequestError('Переданы некорректные данные'));
       }
       return next(err);
     });
@@ -48,10 +47,10 @@ module.exports.createUser = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new BadRequestError('Переданы некорректные данные'));
+        return next(new BadRequestError('Переданы некорректные данные'));
       }
       if (err.code === 11000) {
-        next(new ConflictError('Пользователь с таким email уже существует'));
+        return next(new ConflictError('Пользователь с таким email уже существует'));
       }
       return next(err);
     });
@@ -68,9 +67,7 @@ module.exports.login = (req, res, next) => {
       );
       res.send({ token });
     })
-    .catch(() => {
-      next(new AuthError('Необходима авторизация'));
-    });
+    .catch(next);
 };
 
 module.exports.updateUser = (req, res, next) => {
@@ -84,7 +81,7 @@ module.exports.updateUser = (req, res, next) => {
     .then((user) => res.send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new BadRequestError('Переданы некорректные данные'));
+        return next(new BadRequestError('Переданы некорректные данные'));
       }
       return next(err);
     });
@@ -101,7 +98,7 @@ module.exports.updateAvatar = (req, res, next) => {
     .then((user) => res.send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new BadRequestError('Переданы некорректные данные'));
+        return next(new BadRequestError('Переданы некорректные данные'));
       }
       return next(err);
     });
