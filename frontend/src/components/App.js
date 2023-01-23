@@ -60,9 +60,7 @@ export default function App() {
     api
       .deleteСard(card._id)
       .then(() => {
-        setCards((state) =>
-          state.filter((c) => (c._id === card._id ? false : true))
-        );
+        setCards((state) => state.filter((c) => c._id !== card._id));
       })
       .catch((err) => {
         console.log(err);
